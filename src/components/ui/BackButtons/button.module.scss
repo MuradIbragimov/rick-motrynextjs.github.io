@@ -1,0 +1,18 @@
+@use '@/styles/variables.scss' as vars;
+
+.backButton {
+	display: flex;
+	text-align: center;
+	gap: 5px;
+	cursor: pointer;
+}
+.button {
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	&:hover {
+		color: vars.$cl-hover-elm;
+	}
+}
