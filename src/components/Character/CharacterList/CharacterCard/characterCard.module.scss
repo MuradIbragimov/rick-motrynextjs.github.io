@@ -1,0 +1,18 @@
+@use '@/styles/variables.scss' as vars;
+
+.card {
+	border: 2px solid vars.$cl-border-color;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.2);
+		border: 1px solid vars.$cl-hover-elm;
+		box-shadow: 0 0 12px vars.$cl-hover-elm;
+	}
+}
+
+.cardTitle {
+	text-align: center;
+}
