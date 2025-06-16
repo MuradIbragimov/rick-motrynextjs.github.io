@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import styles from './layout.module.scss'
 import logo from '/public/logo.png'
+import { StoreProvider } from '@/providers/StoreProvider'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -31,36 +32,38 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<header className={styles.header}>
-					<div className={`${styles.container} ${styles.containerHeader}`}>
-						<div className={styles.logo}>
-							<Link href='/'>
-								<Image src={logo} alt='Рик и Морти' width={46} height={49} />
-							</Link>
-						</div>
+				<StoreProvider>
+					<header className={styles.header}>
+						<div className={`${styles.container} ${styles.containerHeader}`}>
+							<div className={styles.logo}>
+								<Link href='/'>
+									<Image src={logo} alt='Рик и Морти' width={46} height={49} />
+								</Link>
+							</div>
 
-						<nav>
-							<ul className={styles.listStyle}>
-								<li>
-									<Link href='/'>Characters</Link>
-								</li>
-								<li>
-									<Link href='/locations'>Locations</Link>
-								</li>
-								<li>
-									<Link href='/episodes'>Episodes</Link>
-								</li>
-								<li>
-									<Link href='/login'>Вход</Link>
-								</li>
-							</ul>
-						</nav>
+							<nav>
+								<ul className={styles.listStyle}>
+									<li>
+										<Link href='/'>Characters</Link>
+									</li>
+									<li>
+										<Link href='/locations'>Locations</Link>
+									</li>
+									<li>
+										<Link href='/episodes'>Episodes</Link>
+									</li>
+									<li>
+										<Link href='/login'>Вход</Link>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</header>
+					<div className={styles.container}>
+						<main>{children}</main>
+						<footer>Это футер</footer>
 					</div>
-				</header>
-				<div className={styles.container}>
-					<main>{children}</main>
-					<footer>Это футер</footer>
-				</div>
+				</StoreProvider>
 			</body>
 		</html>
 	)
