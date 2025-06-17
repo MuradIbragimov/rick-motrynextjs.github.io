@@ -4,7 +4,7 @@ export default function HomePage() {
 	return (
 		<div>
 			<main>
-				<Character></Character>
+				<Character />
 			</main>
 		</div>
 	)

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import style from './characterCard.module.scss'
 import { Character } from './character.types'
 
-const fallbackImage = '/fallback.png' // путь к fallback в папке public
+const fallbackImage = '/fallback.png'
 
 export const CharacterCard: React.FC<{ item: Character }> = ({ item }) => {
 	const [imgSrc, setImgSrc] = useState(item.image)

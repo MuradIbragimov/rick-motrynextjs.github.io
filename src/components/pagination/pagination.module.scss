@@ -1,0 +1,19 @@
+@use '@/styles/variables.scss' as vars;
+
+.container {
+	padding-top: 20px;
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+
+.buttonPage {
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 30px;
+	&:hover {
+		background-color: vars.$cl-hover-elm;
+		color: greenyellow;
+	}
+}

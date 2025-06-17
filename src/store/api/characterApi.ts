@@ -11,9 +11,9 @@ export const characterApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: BASE_URL_SEGMENT }),
 	tagTypes: ['Characters'],
 	endpoints: builder => ({
-		getCharacterList: builder.query<GetCharactersListResponse, void>({
-			query: () => ({
-				url: GET_CHARACTER_LIST,
+		getCharacterList: builder.query<GetCharactersListResponse, number>({
+			query: (page = 1) => ({
+				url: `${GET_CHARACTER_LIST}?page=${page}`,
 				method: 'GET',
 			}),
 		}),
